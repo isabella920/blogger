@@ -1,106 +1,27 @@
-<section id="banner2">
-        <header>
-            <h2>抽牌結果</h2>
-        </header>
-        <div style="text-align:center; min-height:300px;" class="inner" ;>
-        </div>
-        <footer>
-            <a href="#first" class="button style2 scrolly" id="card">抽牌</a> </p>
-        </footer>
-    </section>
-
+<div class="panel">
+	<div class="inner">
+		<h2 class="pages-title">無視論塔羅牌線上抽牌程式</h2>
+		<div class="content pages-content">
+			<div align="center">
 <script language="javascript">
-$('#card').click(function() {
-    $('.inner').html("");
-    $('#cardword').val("");
-    loadCard();
-});
+var cardnum = new Array(5);
+var cardsta = new Array(5);
+var tarot = new Array(78);
+tarot[0] = "杖王";tarot[1] = "杖后";tarot[2] = "杖騎";tarot[3] = "杖公主";tarot[4] = "杖１";tarot[5] = "杖２";
+tarot[6] = "杖３";tarot[7] = "杖４";tarot[8] = "杖５";tarot[9] = "杖６";tarot[10] = "杖７";tarot[11] = "杖８";
+tarot[12] = "杖９";tarot[13] = "杖10";tarot[14] = "劍王";tarot[15] = "劍后";tarot[16] = "劍騎";tarot[17] = "劍公主";
+tarot[18] = "劍１";tarot[19] = "劍２";tarot[20] = "劍３";tarot[21] = "劍４";tarot[22] = "劍５";tarot[23] = "劍６";
+tarot[24] = "劍７";tarot[25] = "劍８";tarot[26] = "劍９";tarot[27] = "劍10";tarot[28] = "杯王";tarot[29] = "杯后";
+tarot[30] = "杯騎";tarot[31] = "杯公主";tarot[32] = "杯１";tarot[33] = "杯２";tarot[34] = "杯３";tarot[35] = "杯４";
+tarot[36] = "杯５";tarot[37] = "杯６";tarot[38] = "杯７";tarot[39] = "杯８";tarot[40] = "杯９";tarot[41] = "杯10";
+tarot[42] = "錢王";tarot[43] = "錢后";tarot[44] = "錢騎";tarot[45] = "錢公主";tarot[46] = "錢１";tarot[47] = "錢２";
+tarot[48] = "錢３";tarot[49] = "錢４";tarot[50] = "錢５";tarot[51] = "錢６";tarot[52] = "錢７";tarot[53] = "錢８";
+tarot[54] = "錢９";tarot[55] = "錢10";tarot[56] = "魔術師";tarot[57] = "女教皇";tarot[58] = "女皇";tarot[59] = "皇帝";
+tarot[60] = "教宗";tarot[61] = "戀人";tarot[62] = "戰車";tarot[63] = "正義";tarot[64] = "隱者";tarot[65] = "命輪";
+tarot[66] = "力量";tarot[67] = "吊人";tarot[68] = "死神";tarot[69] = "節制";tarot[70] = "惡魔";tarot[71] = "高塔";
+tarot[72] = "星星";tarot[73] = "月亮";tarot[74] = "太陽";tarot[75] = "審判";tarot[76] = "世界";tarot[77] = "愚者";
 
-var loadCard = function() {
-
-    var cardnum = new Array(5);
-    var cardsta = new Array(5);
-    var tarot = new Array(78);
-    tarot[0] = "杖王";
-    tarot[1] = "杖后";
-    tarot[2] = "杖騎";
-    tarot[3] = "杖公主";
-    tarot[4] = "杖１";
-    tarot[5] = "杖２";
-    tarot[6] = "杖３";
-    tarot[7] = "杖４";
-    tarot[8] = "杖５";
-    tarot[9] = "杖６";
-    tarot[10] = "杖７";
-    tarot[11] = "杖８";
-    tarot[12] = "杖９";
-    tarot[13] = "杖10";
-    tarot[14] = "劍王";
-    tarot[15] = "劍后";
-    tarot[16] = "劍騎";
-    tarot[17] = "劍公主";
-    tarot[18] = "劍１";
-    tarot[19] = "劍２";
-    tarot[20] = "劍３";
-    tarot[21] = "劍４";
-    tarot[22] = "劍５";
-    tarot[23] = "劍６";
-    tarot[24] = "劍７";
-    tarot[25] = "劍８";
-    tarot[26] = "劍９";
-    tarot[27] = "劍10";
-    tarot[28] = "杯王";
-    tarot[29] = "杯后";
-    tarot[30] = "杯騎";
-    tarot[31] = "杯公主";
-    tarot[32] = "杯１";
-    tarot[33] = "杯２";
-    tarot[34] = "杯３";
-    tarot[35] = "杯４";
-    tarot[36] = "杯５";
-    tarot[37] = "杯６";
-    tarot[38] = "杯７";
-    tarot[39] = "杯８";
-    tarot[40] = "杯９";
-    tarot[41] = "杯10";
-    tarot[42] = "錢王";
-    tarot[43] = "錢后";
-    tarot[44] = "錢騎";
-    tarot[45] = "錢公主";
-    tarot[46] = "錢１";
-    tarot[47] = "錢２";
-    tarot[48] = "錢３";
-    tarot[49] = "錢４";
-    tarot[50] = "錢５";
-    tarot[51] = "錢６";
-    tarot[52] = "錢７";
-    tarot[53] = "錢８";
-    tarot[54] = "錢９";
-    tarot[55] = "錢10";
-    tarot[56] = "魔術師";
-    tarot[57] = "女教皇";
-    tarot[58] = "女皇";
-    tarot[59] = "皇帝";
-    tarot[60] = "教宗";
-    tarot[61] = "戀人";
-    tarot[62] = "戰車";
-    tarot[63] = "正義";
-    tarot[64] = "隱者";
-    tarot[65] = "命輪";
-    tarot[66] = "力量";
-    tarot[67] = "吊人";
-    tarot[68] = "死神";
-    tarot[69] = "節制";
-    tarot[70] = "惡魔";
-    tarot[71] = "高塔";
-    tarot[72] = "星星";
-    tarot[73] = "月亮";
-    tarot[74] = "太陽";
-    tarot[75] = "審判";
-    tarot[76] = "世界";
-    tarot[77] = "愚者";
-
-    var mode = new Array(2);
+var mode = new Array(2);
     mode[0] = "";
     mode[1] = "_";
 
@@ -139,141 +60,14 @@ var loadCard = function() {
         $('#cardword').val(val);
         $('.inner').append(tmp);
     }
-
-
-
-}
-
-
-
-function validateEmail(email) {
-    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-    return re.test(email);
-}
-
-
-$('input[name="email"]').blur(function() {
-    $(this).removeAttr('style');
-});
-$('input[name="email2"]').blur(function() {
-    $(this).removeAttr('style');
-});
-
-$('input[name="name"]').blur(function() {
-    $(this).removeAttr('style');
-});
-$('input[name="sex"]').blur(function() {
-    $(this).removeAttr('style');
-});
-$('input[name="birthday"]').blur(function() {
-    $(this).removeAttr('style');
-});
-$('input[name="horoscope"]').blur(function() {
-    $(this).removeAttr('style');
-});
-$('textarea[name="message"]').blur(function() {
-    $(this).removeAttr('style');
-});
-
-$('input[type="submit"]').click(function() {
-
-    var cardword = $('#cardword').val();
-
-    if (!cardword) {
-        alert('請先抽牌');
-        $( "#card" ).focus();
-        return false;
-    }
-
-    var email = $('input[name="email"]').val();
-    var email2 = $('input[name="email2"]').val();
-    var name = $('input[name="name"]').val();
-    var sex = $('input[name="sex"]').val();
-    var birthday = $('input[name="birthday"]').val();
-    var horoscope = $('input[name="horoscope"]').val();
-    var message = $('textarea[name="message"]').val();
-
-
-    var msg = "";
-
-
-    if (!name) {
-        msg += "請輸入姓名\n";
-        $('input[name="name"]').css("border", "1px solid #f00");
-        $('input[name="name"]').css("background-color", "#fee");
-    } else {
-        $('input[name="name"]').removeAttr('style');
-    }
-
-    if (!sex) {
-        msg += "請輸入性別\n";
-        $('input[name="sex"]').css("border", "1px solid #f00");
-        $('input[name="sex"]').css("background-color", "#fee");
-    } else {
-        $('input[name="sex"]').removeAttr('style');
-    }
-
-    if (!birthday) {
-        msg += "請輸入西元生日\n";
-        $('input[name="birthday"]').css("border", "1px solid #f00");
-        $('input[name="birthday"]').css("background-color", "#fee");
-    } else {
-        $('input[name="birthday"]').removeAttr('style');
-    }
-
-    if (!horoscope) {
-        msg += "請輸入星座\n";
-        $('input[name="horoscope"]').css("border", "1px solid #f00");
-        $('input[name="horoscope"]').css("background-color", "#fee");
-    } else {
-        $('input[name="horoscope"]').removeAttr('style');
-    }
-
-    if (!email) {
-        msg += "請輸入您的EMAIL\n";
-        $('input[name="email"]').css("border", "1px solid #f00");
-        $('input[name="email"]').css("background-color", "#fee");
-    } else {
-
-        if (validateEmail(email)) {
-            $('input[name="email"]').removeAttr('style');
-        } else {
-            msg += "您的EMAIL格式錯誤\n";
-            $('input[name="email"]').css("border", "1px solid #f00");
-            $('input[name="email"]').css("background-color", "#fee");
-        }
-    }
-
-    if (!email2) {
-        msg += "請輸入占卜師的EMAIL\n";
-        $('input[name="email2"]').css("border", "1px solid #f00");
-        $('input[name="email2"]').css("background-color", "#fee");
-    } else {
-        if (validateEmail(email2)) {
-            $('input[name="email2"]').removeAttr('style');
-        } else {
-            msg += "占卜師的EMAIL格式錯誤\n";
-            $('input[name="email2"]').css("border", "1px solid #f00");
-            $('input[name="email2"]').css("background-color", "#fee");
-        }
-    }
-
-    if (!message) {
-        msg += "請輸入問題描述\n";
-        $('textarea[name="message"]').css("border", "1px solid #f00");
-        $('textarea[name="message"]').css("background-color", "#fee");
-    } else {
-        $('textarea[name="message"]').removeAttr('style');
-    }
-
-
-    if (msg) {
-        alert(msg);
-        return false;
-    } else {
-        return true;
-    }
-
-
-});
+document.write("</tr></table>");
 </script>
+
+<hr><span style="color: rgb(153, 153, 0); text-decoration: underline; font-weight: bold;">請把上列牌名複製後貼上板面<br><br>☆★<span style="color: rgb(51, 51, 255);"><a style="color: rgb(51, 102, 255);"
+
+href="JavaScript:this.location.reload()">抽牌</a></span>★☆</div>
+		</div>
+			</div>
+</div>
+
+			</div>
