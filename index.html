@@ -22,44 +22,62 @@ tarot[66] = "力量";tarot[67] = "吊人";tarot[68] = "死神";tarot[69] = "節�
 tarot[72] = "星星";tarot[73] = "月亮";tarot[74] = "太陽";tarot[75] = "審判";tarot[76] = "世界";tarot[77] = "愚者";
 
 var mode = new Array(2);
-    mode[0] = "";
-    mode[1] = "_";
+mode[0] = "";
+mode[1] = "_";
 
-    var flag = true;
+var flag=true;
 
-    while (flag) {
-        flag = false;
+while (flag)
+{
+	flag=false;
 
-        for (i = 0; i < 5; i++) {
-            //out1[i] = tarot[Math.floor(Math.random() * tarot.length)];
-            cardnum[i] = Math.floor(Math.random() * tarot.length);
-        }
+	for (i=0;i<5;i++)
+	{
+		//out1[i] = tarot[Math.floor(Math.random() * tarot.length)];
+		cardnum[i] = Math.floor(Math.random() * tarot.length);
+	}
 
-        for (i = 0; i < 5; i++) {
-            for (j = 0; j < i; j++) {
-                if (cardnum[j] == cardnum[i]) {
-                    flag = true;
-                    break;
-                }
-            }
-        }
-    }
+	for(i=0;i<5;i++)
+	{
+		for(j=0;j<i;j++)
+		{
+			if(cardnum[j]==cardnum[i])
+			{
+				flag=true;
+				break;
+			}
+		}
+	}
+}
 
-    for (i = 0; i < 5; i++) {
-        cardsta[i] = mode[Math.floor(Math.random() * mode.length)];
-    }
-
-    for (i = 0; i < 5; i++) {
-        num = cardnum[i];
-        sta = cardsta[i];
-        wrd = (sta == "_") ? tarot[num] + "逆位" : tarot[num] + "正位";
-        tmp = "<div class='card'><img class='cardimg' src='http://sites.google.com/site/caishin/Home/tarot/" + sta + num + ".jpg' width='95px' height='131px'><div class='cardwrd'>" + wrd + "</div></div>";
-
-        var val = ($('#cardword').val()) ? $('#cardword').val() + "," + wrd : "" + wrd;
-
-        $('#cardword').val(val);
-        $('.inner').append(tmp);
-    }
+for (i=0;i<5;i++)
+{
+	//out2[i] = "<img src='http://sites.google.com/site/caishin/Home/tarot/"+mode[Math.floor(Math.random() * mode.length)]+".jpg'>";
+	cardsta[i] = mode[Math.floor(Math.random() * mode.length)];
+}
+document.write("<table border='0' align='center' width='90%'><tr align='center'>");
+for(i=0;i<5;i++)
+{
+	tmp = "<td><img src='http://sites.google.com/site/caishin/Home/tarot/"+cardsta[i]+cardnum[i]+".jpg' width='65px' height='101px'></td>";
+	document.write(tmp);
+}
+document.write("</tr><tr align='center'>");
+for(i=0;i<5;i++)
+{
+	document.write("<td>");
+	tmp = cardnum[i];
+	document.write(tarot[tmp]);
+	tmp = cardsta[i];
+	if(tmp == "_")
+	{
+		document.write("逆位");
+	}
+	else
+	{
+		document.write("正位");
+	}
+	document.write("</td>");
+}
 document.write("</tr></table>");
 </script>
 
