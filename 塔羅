@@ -1,0 +1,91 @@
+<div class="panel">
+	<div class="inner">
+		<h2 class="pages-title">無視論塔羅牌線上抽牌程式</h2>
+		<div class="content pages-content">
+			<div align="center">
+<script language="javascript">
+var cardnum = new Array(5);
+var cardsta = new Array(5);
+var tarot = new Array(78);
+tarot[0] = "杖王";tarot[1] = "杖后";tarot[2] = "杖騎";tarot[3] = "杖公主";tarot[4] = "杖１";tarot[5] = "杖２";
+tarot[6] = "杖３";tarot[7] = "杖４";tarot[8] = "杖５";tarot[9] = "杖６";tarot[10] = "杖７";tarot[11] = "杖８";
+tarot[12] = "杖９";tarot[13] = "杖10";tarot[14] = "劍王";tarot[15] = "劍后";tarot[16] = "劍騎";tarot[17] = "劍公主";
+tarot[18] = "劍１";tarot[19] = "劍２";tarot[20] = "劍３";tarot[21] = "劍４";tarot[22] = "劍５";tarot[23] = "劍６";
+tarot[24] = "劍７";tarot[25] = "劍８";tarot[26] = "劍９";tarot[27] = "劍10";tarot[28] = "杯王";tarot[29] = "杯后";
+tarot[30] = "杯騎";tarot[31] = "杯公主";tarot[32] = "杯１";tarot[33] = "杯２";tarot[34] = "杯３";tarot[35] = "杯４";
+tarot[36] = "杯５";tarot[37] = "杯６";tarot[38] = "杯７";tarot[39] = "杯８";tarot[40] = "杯９";tarot[41] = "杯10";
+tarot[42] = "錢王";tarot[43] = "錢后";tarot[44] = "錢騎";tarot[45] = "錢公主";tarot[46] = "錢１";tarot[47] = "錢２";
+tarot[48] = "錢３";tarot[49] = "錢４";tarot[50] = "錢５";tarot[51] = "錢６";tarot[52] = "錢７";tarot[53] = "錢８";
+tarot[54] = "錢９";tarot[55] = "錢10";tarot[56] = "魔術師";tarot[57] = "女教皇";tarot[58] = "女皇";tarot[59] = "皇帝";
+tarot[60] = "教宗";tarot[61] = "戀人";tarot[62] = "戰車";tarot[63] = "正義";tarot[64] = "隱者";tarot[65] = "命輪";
+tarot[66] = "力量";tarot[67] = "吊人";tarot[68] = "死神";tarot[69] = "節制";tarot[70] = "惡魔";tarot[71] = "高塔";
+tarot[72] = "星星";tarot[73] = "月亮";tarot[74] = "太陽";tarot[75] = "審判";tarot[76] = "世界";tarot[77] = "愚者";
+
+var mode = new Array(2);
+mode[0] = "";
+mode[1] = "_";
+
+var flag=true;
+
+while (flag)
+{
+	flag=false;
+
+	for (i=0;i<5;i++)
+	{
+		//out1[i] = tarot[Math.floor(Math.random() * tarot.length)];
+		cardnum[i] = Math.floor(Math.random() * tarot.length);
+	}
+
+	for(i=0;i<5;i++)
+	{
+		for(j=0;j<i;j++)
+		{
+			if(cardnum[j]==cardnum[i])
+			{
+				flag=true;
+				break;
+			}
+		}
+	}
+}
+
+for (i=0;i<5;i++)
+{
+	//out2[i] = "<img src='https://tarot.caishin.tw/tarot/"+mode[Math.floor(Math.random() * mode.length)]+".jpg'>";
+	cardsta[i] = mode[Math.floor(Math.random() * mode.length)];
+}
+document.write("<table border='0' align='center' width='90%'><tr align='center'>");
+for(i=0;i<5;i++)
+{
+	tmp = "<td><img src='https://tarot.caishin.tw/tarot/"+cardsta[i]+cardnum[i]+".jpg' width='65px' height='101px'></td>";
+	document.write(tmp);
+}
+document.write("</tr><tr align='center'>");
+for(i=0;i<5;i++)
+{
+	document.write("<td>");
+	tmp = cardnum[i];
+	document.write(tarot[tmp]);
+	tmp = cardsta[i];
+	if(tmp == "_")
+	{
+		document.write("逆位");
+	}
+	else
+	{
+		document.write("正位");
+	}
+	document.write("</td>");
+}
+document.write("</tr></table>");
+</script>
+
+<hr><span style="color: rgb(153, 153, 0); text-decoration: underline; font-weight: bold;">請把上列牌名複製後貼上板面<br><br>☆★<span style="color: rgb(51, 51, 255);"><a style="color: rgb(51, 102, 255);"
+
+href="JavaScript:this.location.reload()">抽牌</a></span>★☆</div>
+		</div>
+			</div>
+</div>
+
+			</div>
