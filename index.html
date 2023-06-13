@@ -52,13 +52,13 @@ while (flag)
 
 for (i=0;i<5;i++)
 {
-	//out2[i] = "<img src='http://sites.google.com/site/caishin/Home/tarot/"+mode[Math.floor(Math.random() * mode.length)]+".jpg'>";
+	//out2[i] = "<img src='https://tarot.caishin.tw/tarot/"+mode[Math.floor(Math.random() * mode.length)]+".jpg'>";
 	cardsta[i] = mode[Math.floor(Math.random() * mode.length)];
 }
 document.write("<table border='0' align='center' width='90%'><tr align='center'>");
 for(i=0;i<5;i++)
 {
-	tmp = "<td><img src='http://sites.google.com/site/caishin/Home/tarot/"+cardsta[i]+cardnum[i]+".jpg' width='95px' height='131px'></td>";
+	tmp = "<td><img src='https://tarot.caishin.tw/tarot/"+cardsta[i]+cardnum[i]+".jpg' width='95px' height='131px'></td>";
 	document.write(tmp);
 }
 document.write("</tr><tr align='center'>");
